@@ -1,0 +1,68 @@
+<% include ../partials/header %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="thumbnail">
+          <img class="img-responsive" src="<%=blog.image%>" >
+          <div class="caption-full">
+            <div >
+               <h4 ><%=blog.name%></h4>
+
+
+            </div>
+
+                  <P>
+                  <%=blog.description%>
+                 </p>
+
+                <p>
+                     <h6>Submitted  by <%=blog.author.username%></h6>
+                       <% if(!currentUser){%>
+                      <% }else{%>
+                       <% if(blog.author.id.equals(currentUser._id)){%>
+                     <a href="/techblog/<%=blog._id%>/edit"  class="btn btn-xs btn-warning"  > Edit </a>
+
+                     <form class="delete-form" action="/techblog/<%= blog._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger btn-xs"> Delete</button>
+          </form>
+             <%}%>
+              <%}%>
+                </p>
+          </div>
+      </div>
+  <div class="well">
+        <div class="text-right">
+          <p>
+              <a href="/techblog/<%=blog._id%>/comment/new" class="btn-lg btn-success"> Add new comment </a>
+          </p>
+        </div>
+      <% blog.comments.forEach(function(comment) { %>
+
+    <div class="row">
+            <div class="col-md-12">
+                            <b><%= comment.author.username %></b>
+                            <p>
+                                  <%=comment.text%>
+                            </p>
+                            <span class="pull-right" text-transform="capitalize" ><%=comment.createdAt%></span>
+                            <% if(!currentUser){%>
+                           <% }else{%>
+                              <% if(comment.author.id.equals(currentUser.id)){%>
+                              <a href="/techblog/<%=blog.id%>/comment/<%=comment._id%>/edit"  class="btn btn-xs btn-warning"> Edit </a>
+                              <form class="delete-form" action="/techblog/<%=blog.id%>/comment/<%= comment._id %>?_method=DELETE" method="POST">
+                               <button class="btn btn-danger btn-xs">Delete</button>
+                               </form>
+                                  <%}%>
+                               <%}%>
+
+                  <% }) %>
+
+           </div>
+
+    </div>
+</div>
+
+
+</div>
+</div>
+</div>

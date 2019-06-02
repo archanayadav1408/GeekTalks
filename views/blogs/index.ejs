@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+<div class="container">
+
+<header class="jumbotron">
+  <div class="container">
+    <h1>WELCOME TO GEEKTALKS</h1>
+    <p>view new technology</p>
+    <p>
+    <a class="btn btn-primary btn-large" href="/techblog/new">Create new blog related to tech</a>
+    </p>
+  </div>
+</header>
+<div class="row text-center" >
+
+     <%blogs.forEach(function(blog){%>
+       <div>
+         <div class=" col-md-3 col-sm-6">
+            <div class="thumbnail">
+               <img src="<%=blog.image%>">
+               <div class="caption">
+                  <h4><%=blog.name%></h4>
+               </div>
+               <P>
+                 <a href=" /techblog/<%=blog._id%>" class="btn btn-primary ">More Info</a>
+              </p>
+            </div>
+
+       </div>
+         </div>
+     <% }); %>
+
+</div>
+
+</div>

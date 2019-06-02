@@ -1,0 +1,90 @@
+
+
+/* text link styling */
+a:hover {
+text-decoration: none;
+}
+
+a:focus {
+outline: 0;
+text-decoration: none;
+}
+
+a:visited {
+text-decoration: none;
+}
+
+
+.card {
+border: none;
+border-radius: 2px;
+box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+transition: box-shadow 200ms cubic-bezier(0.4,0.0,0.2,1);
+}
+
+.card:hover {
+box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+}
+
+
+.btn-b-mg {
+margin-bottom: 20px;
+}
+
+
+.thumbnail img {
+width: 100%;
+
+opacity: 1;
+transition: opacity 0.3s;
+}
+
+.thumbnail img[data-src] {
+opacity: 0;
+}
+
+.thumbnail {
+padding: 0;
+}
+
+.thumbnail .caption-full{
+  padding:9px
+}
+.campground__image {
+height: 150px;
+}
+
+span .align-bottom {
+vertical-align: bottom;
+}
+
+
+.rwd-form {
+margin: 25px auto;
+width: 90%;
+}
+
+@media (min-width: 600px) {
+.rwd-form {
+width: 50%;
+}
+}
+
+@media (min-width: 900px) {
+.rwd-form {
+width: 40%;
+}
+}
+
+@media (min-width: 1200px) {
+.rwd-form {
+width: 30%;
+}
+}
+
+li img {
+  border-radius: 50%;
+}
+.delete-form {
+display: inline;
+}
