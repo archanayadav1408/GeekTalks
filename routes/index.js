@@ -182,7 +182,7 @@ console.log(user.username);
         service: "Gmail",
         auth: {
           user: "archanayadav14898@gmail.com",
-          pass: "anup1405suman"
+          pass: "xyvvv"
         }
       });
       let mailOptions = {
