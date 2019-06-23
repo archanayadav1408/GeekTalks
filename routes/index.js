@@ -105,7 +105,7 @@ router.post("/password_reset", (req, res, next) => {
         service: "Gmail",
         auth: {
           user: "archanayadav14898@gmail.com",
-          pass: "anup1405suman"
+          pass: "cffhjkl"
         }
       });
       let mailOptions = {
